@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+//using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Routing;
@@ -13,7 +13,7 @@ namespace PAC
 		void Application_Start(object sender, EventArgs e)
 		{
 			// Code that runs on application startup
-			AuthConfig.RegisterOpenAuth();
+			//AuthConfig.RegisterOpenAuth();
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
 		}
 
