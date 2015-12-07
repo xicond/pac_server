@@ -1,9 +1,10 @@
-﻿using System;
+﻿//using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+//using System.Web;
 using System.Web.Script.Services;
 using System.Web.Services;
+using PAC.App_Data;
 
 namespace PAC
 {
@@ -15,7 +16,7 @@ namespace PAC
 	[System.ComponentModel.ToolboxItem(false)]
 	// To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
 	// [System.Web.Script.Services.ScriptService]
-	public class edmx1 : System.Web.Services.WebService
+	public class edmx1 : WebService
 	{
 
 		[WebMethod(CacheDuration = 10)]
@@ -29,10 +30,7 @@ namespace PAC
 			{
 				results = results.Where(x => x.nominal <= max);
 			}
-			if(limit>0)
-				results = results.Take(limit);
-			else
-				results = results.Take(10);
+			results = results.Take(limit <= 0 ? 10 : limit);
 			return results.ToList();
 		}
 	}
