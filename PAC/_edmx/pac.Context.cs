@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PAC.App_Data
+namespace PAC._edmx
 {
     using System;
     using System.Data.Entity;

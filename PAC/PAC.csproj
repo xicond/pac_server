@@ -186,23 +186,6 @@
     <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
-    <EntityDeploy Include="App_Data\pac.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>pac.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="App_Data\pac.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>pac.edmx</DependentUpon>
-      <LastGenOutput>pac.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="App_Data\pac.edmx.diagram">
-      <DependentUpon>pac.edmx</DependentUpon>
-    </Content>
-    <Content Include="App_Data\pac.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>pac.edmx</DependentUpon>
-      <LastGenOutput>pac.cs</LastGenOutput>
-    </Content>
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
@@ -211,6 +194,23 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
+    <EntityDeploy Include="_edmx\pac.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>pac.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="_edmx\pac.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>pac.edmx</DependentUpon>
+      <LastGenOutput>pac.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="_edmx\pac.edmx.diagram">
+      <DependentUpon>pac.edmx</DependentUpon>
+    </Content>
+    <Content Include="_edmx\pac.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>pac.edmx</DependentUpon>
+      <LastGenOutput>pac.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-2.1.4.min.map" />
@@ -224,12 +224,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Data\admin.cs">
-      <DependentUpon>pac.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\donatur.cs">
-      <DependentUpon>pac.tt</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -244,21 +238,6 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\pac.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>pac.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\pac.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>pac.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\pac.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>pac.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -281,6 +260,27 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_edmx\admin.cs">
+      <DependentUpon>pac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_edmx\donatur.cs">
+      <DependentUpon>pac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_edmx\pac.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pac.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_edmx\pac.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_edmx\pac.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pac.edmx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

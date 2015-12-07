@@ -4,9 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="bdcf03f2a9264a9b8fbf1b7fd037e719" Name="Diagram1" >
-        <EntityTypeShape EntityType="pacmodel.admin" Width="1.5" PointX="0.889726756554901" PointY="13.74235484643949" />
-        <EntityTypeShape EntityType="pacmodel.donatur" Width="1.5" PointX="7.5839406734257651" PointY="3.2827315792826619" />
+      <Diagram DiagramId="ce6cb96233c14458b116b3c904c5b66c" Name="Diagram1">
+        <EntityTypeShape EntityType="pacModel.admin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pacModel.donatur" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

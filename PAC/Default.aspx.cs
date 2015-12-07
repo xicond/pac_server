@@ -4,7 +4,7 @@ using System.Linq;
 //using System.Web;
 using System.Web.UI;
 //using System.Web.UI.WebControls;
-using PAC.App_Data;
+using PAC._edmx;
 
 namespace PAC
 {

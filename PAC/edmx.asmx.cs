@@ -4,7 +4,8 @@ using System.Linq;
 //using System.Web;
 using System.Web.Script.Services;
 using System.Web.Services;
-using PAC.App_Data;
+using PAC;
+using PAC._edmx;
 
 namespace PAC
 {

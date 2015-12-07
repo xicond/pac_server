@@ -7,18 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PAC.App_Data
+namespace PAC._edmx
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class admin
+    public partial class donatur
     {
         public int id { get; set; }
-        public string username { get; set; }
-        public string fullname { get; set; }
-        public string password { get; set; }
-        public string isadmin { get; set; }
-        public Nullable<System.DateTime> lastlogin { get; set; }
+        public string item { get; set; }
+        public string nama { get; set; }
+        public string namamandarin { get; set; }
+        public string alamat { get; set; }
+        public Nullable<decimal> nominal { get; set; }
+        public Nullable<int> adminid { get; set; }
+        public Nullable<System.DateTime> tanggal { get; set; }
+        public string nomeja { get; set; }
+        public string isdisplayed { get; set; }
+        public string matauang { get; set; }
     }
 }
