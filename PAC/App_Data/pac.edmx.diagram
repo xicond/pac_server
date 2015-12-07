@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bdcf03f2a9264a9b8fbf1b7fd037e719" Name="Diagram1" >
+        <EntityTypeShape EntityType="pacmodel.admin" Width="1.5" PointX="0.889726756554901" PointY="13.74235484643949" />
+        <EntityTypeShape EntityType="pacmodel.donatur" Width="1.5" PointX="7.5839406734257651" PointY="3.2827315792826619" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
