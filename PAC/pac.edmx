@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="pacmodel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="pacmodelStoreContainer">
+          <EntitySet Name="admin" EntityType="pacmodel.Store.admin" store:Type="Tables" store:Schema="dbo" store:Name="admin">
+            <DefiningQuery>SELECT 
+      [admin].[id] AS [id], 
+      [admin].[username] AS [username], 
+      [admin].[fullname] AS [fullname], 
+      [admin].[password] AS [password], 
+      [admin].[isadmin] AS [isadmin], 
+      [admin].[lastlogin] AS [lastlogin]
+      FROM [dbo].[admin] AS [admin]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="donatur" EntityType="pacmodel.Store.donatur" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'pac.dbo.admin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="varchar" MaxLength="50" />
+          <Property Name="fullname" Type="varchar" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+          <Property Name="isadmin" Type="char" MaxLength="10" />
+          <Property Name="lastlogin" Type="datetime" />
+        </EntityType>
+        <EntityType Name="donatur">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="item" Type="varchar" MaxLength="50" />
+          <Property Name="nama" Type="varchar" MaxLength="100" />
+          <Property Name="namamandarin" Type="nvarchar" MaxLength="100" />
+          <Property Name="alamat" Type="varchar" MaxLength="200" />
+          <Property Name="nominal" Type="decimal" />
+          <Property Name="adminid" Type="int" />
+          <Property Name="tanggal" Type="datetime" />
+          <Property Name="nomeja" Type="varchar" MaxLength="50" />
+          <Property Name="isdisplayed" Type="char" MaxLength="10" />
+          <Property Name="matauang" Type="varchar" MaxLength="50" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="pacmodel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="pac_entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="admins" EntityType="pacmodel.admin" />
+          <EntitySet Name="donaturs" EntityType="pacmodel.donatur" />
+        </EntityContainer>
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="fullname" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="password" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="isadmin" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="lastlogin" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="donatur">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="item" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="nama" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="namamandarin" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="alamat" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="nominal" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="adminid" Type="Int32" />
+          <Property Name="tanggal" Type="DateTime" Precision="3" />
+          <Property Name="nomeja" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="isdisplayed" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="matauang" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="pacmodelStoreContainer" CdmEntityContainer="pac_entities">
+          <EntitySetMapping Name="admins">
+            <EntityTypeMapping TypeName="pacmodel.admin">
+              <MappingFragment StoreEntitySet="admin">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="isadmin" ColumnName="isadmin" />
+                <ScalarProperty Name="lastlogin" ColumnName="lastlogin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="donaturs">
+            <EntityTypeMapping TypeName="pacmodel.donatur">
+              <MappingFragment StoreEntitySet="donatur">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="item" ColumnName="item" />
+                <ScalarProperty Name="nama" ColumnName="nama" />
+                <ScalarProperty Name="namamandarin" ColumnName="namamandarin" />
+                <ScalarProperty Name="alamat" ColumnName="alamat" />
+                <ScalarProperty Name="nominal" ColumnName="nominal" />
+                <ScalarProperty Name="adminid" ColumnName="adminid" />
+                <ScalarProperty Name="tanggal" ColumnName="tanggal" />
+                <ScalarProperty Name="nomeja" ColumnName="nomeja" />
+                <ScalarProperty Name="isdisplayed" ColumnName="isdisplayed" />
+                <ScalarProperty Name="matauang" ColumnName="matauang" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
